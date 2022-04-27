@@ -176,7 +176,7 @@ def user_stats(df):
     count_user_types = df['User Type'].value_counts()
     print('Count of user type:\n',count_user_types)
        
-    # Display counts of gender
+    # Display counts and of gender
     try:
         count_gender_types = df['Gender'].value_counts()
         print('Gender Types:\n', count_gender_types)
@@ -211,14 +211,14 @@ def user_stats(df):
     print('-'*40)
 
     
-""" Asking 5 lines of the raw data and more, if they want"""
+""" Ask if the user wants to see the next 5 rows of data and more """
 
 def display_data (df):
     raw_data = 0
     while True:
         answer = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n>').lower()
         if answer not in ['yes', 'no']:
-            answer = input("Sorry, the data is incorrect. Please try again").lower()
+            answer = input("Sorry, check your data and try again").lower()
         elif answer == 'yes':
             raw_data += 5
             print(df.iloc[raw_data : raw_data + 5])
